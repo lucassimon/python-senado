@@ -2,6 +2,91 @@
 from __future__ import unicode_literals
 import six
 
+class Exercicio(object):
+    """
+
+    """
+    def __init__(self, codigo, data):
+
+        self._codigo = codigo
+
+        self._data = data
+
+    @property
+    def codigo(self):
+        return self._codigo
+
+    @codigo.setter
+    def codigo(self, value):
+
+        self._codigo = codigo
+
+    @property
+    def data(self):
+        return self._data
+
+    @data.setter
+    def data(self, value):
+
+        self._data = data
+
+
+class Suplente(Pessoa):
+    """
+
+    """
+    pass
+
+
+class Titular(Pessoa):
+    """
+
+    """
+    pass
+
+class Mandato(object):
+    """
+
+    """
+    _codigo = None
+    _uf = None
+    _descricao = None
+
+    def __init__(self, codigo, uf, descricao):
+
+        self._codigo = codigo
+
+        self._uf = uf
+
+        self._descricao = descricao
+
+    @property
+    def codigo(self):
+        return self._codigo
+
+    @codigo.setter
+    def codigo(self, value):
+
+        self._codigo = codigo
+
+    @property
+    def uf(self):
+        return self._uf
+
+    @uf.setter
+    def uf(self, value):
+
+        self._uf = uf
+
+    @property
+    def descricao(self):
+        return self._descricao
+
+    @descricao.setter
+    def uf(self, value):
+
+        self._descricao = descricao
+
 
 class Parlamentar(object):
     """
@@ -62,7 +147,6 @@ class Parlamentar(object):
 
         self._nome = nome
 
-
     @property
     def nome_completo(self):
         return self._nome_completo
@@ -71,8 +155,6 @@ class Parlamentar(object):
     def nome_completo(self, value):
 
         self._nome_completo = nome_completo
-
-
 
     @property
     def sexo(self):
@@ -83,7 +165,6 @@ class Parlamentar(object):
 
         self._sexo = sexo
 
-
     @property
     def forma_tratamento(self):
         return self._forma_tratamento
@@ -92,7 +173,6 @@ class Parlamentar(object):
     def forma_tratamento(self, value):
 
         self._forma_tratamento = forma_tratamento
-
 
     @property
     def foto(self):
@@ -103,8 +183,6 @@ class Parlamentar(object):
 
         self._foto = foto
 
-
-
     @property
     def pagina(self):
         return self._pagina
@@ -114,8 +192,6 @@ class Parlamentar(object):
 
         self._pagina = pagina
 
-
-
     @property
     def email(self):
         return self._email
@@ -124,7 +200,6 @@ class Parlamentar(object):
     def email(self, value):
 
         self._email = email
-
 
     @property
     def sigla_partido(self):
