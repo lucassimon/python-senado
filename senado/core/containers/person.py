@@ -5,13 +5,13 @@ import six
 
 class Pessoa(object):
     """
-
+    Classe pessoa para designar um parlamentar
     """
     _codigo = None
     _nome = None
     _descricao = None
 
-    def __init__(self, codigo, uf, descricao):
+    def __init__(self, codigo, nome, descricao):
 
         self._codigo = codigo
 
@@ -26,7 +26,7 @@ class Pessoa(object):
     @codigo.setter
     def codigo(self, value):
 
-        self._codigo = codigo
+        self._codigo = value
 
     @property
     def nome(self):
@@ -35,7 +35,7 @@ class Pessoa(object):
     @nome.setter
     def nome(self, value):
 
-        self._nome = nome
+        self._nome = value
 
     @property
     def descricao(self):
@@ -44,4 +44,4 @@ class Pessoa(object):
     @descricao.setter
     def uf(self, value):
 
-        self._descricao = descricao
+        self._descricao = value
