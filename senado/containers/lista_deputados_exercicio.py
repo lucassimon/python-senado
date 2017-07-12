@@ -29,3 +29,21 @@ class GetAllParlamentaresRS(SuccessContainerResponse):
         self._msg = msg
         self._version = version
         self._version_service = version_service
+
+    @property
+    def version(self):
+        return self.version
+
+    @version.setter
+    def version(self, value):
+
+        self._versionr = value
+
+    @property
+    def version_service(self):
+        return self._version_service
+
+    @version_service.setter
+    def version_service(self, value):
+
+        self._version_service = value

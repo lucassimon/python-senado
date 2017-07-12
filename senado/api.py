@@ -22,7 +22,7 @@ from senado.core.containers.error import (
     ErrorRS, ExceptionRS, ConnectionExceptionRS
 )
 from senado.parse import SenadoParse
-from senado.containers.lista_deputados_em_exercicio import (
+from senado.containers.lista_deputados_exercicio import (
     GetAllParlamentaresRS
 )
 
@@ -52,7 +52,7 @@ class API(APIBase):
                 headers={
                     'Accept': 'application/json'
                 }
-            )
+            ).json()
 
         except ValueError as e:
             return ErrorRS(
@@ -84,6 +84,8 @@ class API(APIBase):
         # tratar os dados
 
         data = SenadoParse.get_all(response)
+
+        pytest.set_trace()
 
         data_rs = GetAllParlamentaresRS(
             error=False,

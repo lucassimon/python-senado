@@ -13,4 +13,6 @@ class SenadoParse(object):
         Parse de todos os dados
         """
 
-        return None
+        data = []
+
+        return data

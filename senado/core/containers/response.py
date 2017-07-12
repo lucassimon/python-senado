@@ -15,11 +15,11 @@ class ContainerResponse(object):
         self._msg = msg
 
     @property
-    def has_error(self):
+    def error(self):
         return self._has_error
 
-    @has_error.setter
-    def has_error(self, value):
+    @error.setter
+    def error(self, value):
 
         self._has_error = value
 

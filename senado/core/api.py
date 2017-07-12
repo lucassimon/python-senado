@@ -14,16 +14,3 @@ class APIBase(object):
             return True
 
         return False
-
-    def _verifica_response_has_error(self, res):
-
-        if res['hasError']:
-
-            return True
-
-        return False
-
-    def _verifica_exception(self, res, execption_class=Exception):
-
-        if res['hasError']:
-            raise execption_class(res['Msg'])
