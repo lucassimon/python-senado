@@ -17,25 +17,28 @@ from requests.exceptions import (
 )
 
 
-from lms.core.api import APIBase
-from lms.core.containers.login import LoginRQ
-from lms.core.containers.error import (
+from senado.core.api import APIBase
+from senado.core.containers.error import (
     ErrorRS, ExceptionRS, ConnectionExceptionRS
+)
+from senado.parse import SenadoParse
+from senado.containers.lista_deputados_em_exercicio import (
+    GetAllParlamentaresRS
 )
 
 
 class API(APIBase):
     """
     Api para servico com a solução LMS do WebAula
-
     """
+
     ENDPOINT = 'http://legis.senado.leg.br/dadosabertos/senador/lista/atual'
 
-    def __init__(self, passport):
+    def __init__(self):
 
         pass
 
-    def lista_deputados_em_exercicio(self, paginate_rq):
+    def lista_deputados_em_exercicio(self):
         """
         Retorna todos os parlamentares em exercicio
         """
@@ -44,7 +47,12 @@ class API(APIBase):
 
         try:
 
-            response = requests.get(self.ENDPOINT)
+            response = requests.get(
+                self.ENDPOINT,
+                headers={
+                    'Accept': 'application/json'
+                }
+            )
 
         except ValueError as e:
             return ErrorRS(
@@ -77,12 +85,30 @@ class API(APIBase):
 
         data = SenadoParse.get_all(response)
 
-        data_rs = GetAllStudentRS(
-            error=response['hasError'],
-            guid=response['Guid'],
-            msg=response['Msg'],
+        data_rs = GetAllParlamentaresRS(
+            error=False,
+            version=response.get(
+                'ListaParlamentarEmExercicio'
+            ).get(
+                'Metadados'
+            ).get(
+                'Versao'
+            ),
+            msg=response.get(
+                'ListaParlamentarEmExercicio'
+            ).get(
+                'Metadados'
+            ).get(
+                'DescricaoDataSet'
+            ),
+            version_service=response.get(
+                'ListaParlamentarEmExercicio'
+            ).get(
+                'Metadados'
+            ).get(
+                'VersaoServico'
+            ),
             data=data
         )
 
         return data_rs
-
