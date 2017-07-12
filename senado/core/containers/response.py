@@ -1,18 +1,17 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+
 import six
 
 
 class ContainerResponse(object):
 
     _has_error = False
-    _guid = ''
     _msg = ''
 
-    def __init__(self, error=False, guid='', msg=''):
+    def __init__(self, error=False, msg=''):
 
         self._has_error = error
-        self._guid = guid
         self._msg = msg
 
     @property
@@ -23,15 +22,6 @@ class ContainerResponse(object):
     def has_error(self, value):
 
         self._has_error = value
-
-    @property
-    def guid(self):
-        return self._guid
-
-    @guid.setter
-    def guid(self, value):
-
-        self._guid = value
 
     @property
     def msg(self):
@@ -49,30 +39,29 @@ class SuccessContainerResponse(ContainerResponse):
     Container de sucesso
     """
 
-    _data_list = []
+    _data = []
 
-    def __init__(self, error=True, guid='', msg='', data=[]):
+    def __init__(self, error=False, msg='', data=[]):
 
         if not isinstance(data, list):
             raise ValueError(
                 'Os itens precisam estar em uma lista'
             )
 
-        self._data_list = data
+        self._data = data
         self._has_error = error
-        self._guid = guid
         self._msg = msg
 
     @property
-    def data_list(self):
-        return self._data_list
+    def data(self):
+        return self._data
 
-    @data_list.setter
-    def data_list(self, value):
+    @data.setter
+    def data(self, value):
 
         if not isinstance(value, list):
             raise ValueError(
                 'Os itens precisam estar em uma lista'
             )
 
-        self._data_list = value
+        self._data = value

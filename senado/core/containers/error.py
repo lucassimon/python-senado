@@ -2,8 +2,8 @@
 from __future__ import unicode_literals
 import six
 
-from lms.core.containers.response import (
-    ContainerResponse, ErrorListResponse
+from senado.core.containers.response import (
+    ContainerResponse
 )
 
 
@@ -16,10 +16,9 @@ class ExceptionRS(ErrorRS):
 
     _exception = None
 
-    def __init__(self, error=False, guid='', msg='', exception=None):
+    def __init__(self, error=False, msg='', exception=None):
 
         self._has_error = error
-        self._guid = guid
         self._msg = msg
 
         if exception:
