@@ -43,6 +43,6 @@ class Pessoa(object):
         return self._descricao
 
     @descricao.setter
-    def uf(self, value):
+    def descricao(self, value):
 
         self._descricao = value

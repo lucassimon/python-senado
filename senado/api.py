@@ -83,7 +83,7 @@ class API(APIBase):
 
         # tratar os dados
 
-        data = SenadoParse.get_all(response)
+        data = SenadoParse.parse(response)
 
         pytest.set_trace()
 
