@@ -467,8 +467,6 @@ class SenadoParse(object):
         except Exception:
             return data
 
-        pytest.set_trace()
-
         for p in parlamentares:
 
             parlamentar = SenadoParse.get_parlamentar(

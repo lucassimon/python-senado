@@ -1,1 +1,3 @@
-{}
+{
+  "tests/senado/test_api.py::SenadoTestCase::test_sucesso_lista_deputados_em_exercicio": true
+}

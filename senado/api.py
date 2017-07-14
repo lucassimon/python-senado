@@ -85,8 +85,6 @@ class API(APIBase):
 
         data = SenadoParse.parse(response)
 
-        pytest.set_trace()
-
         data_rs = GetAllParlamentaresRS(
             error=False,
             version=response.get(
