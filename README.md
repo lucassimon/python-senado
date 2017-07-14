@@ -2,7 +2,7 @@
 
 Biblioteca em python para buscar através de API os dados dos senadores brasileiros.
 
-# Como utilizar
+## Como utilizar
 
 Instalar o pacote python-senado
 
@@ -12,11 +12,39 @@ Métodos disponíveis:
 
 * lista_deputados_em_exercicio
 
-# Testes
+## Testes
 
 Para executar o teste é necessário ter instalado os pacotes de desenvolvimento em seu virtualenv.
 
 `pip install requirements-dev`
 
 Em seguida execute `pytest`
+
+
+## Arquitetura do pacote
+
+Estrutura e comentarios acerca de cada modulo
+
+```
+.
+├── api.py #  Pasta contendo a classe de comunicacao e seus métodos
+├── containers # Pasta contendo os containers dos metodos
+│   ├── __init__.py
+│   ├── lista_deputados_exercicio.py # Possui o container de responsta deste metodo
+│   ├── parlamentar.py # Possui as classes OO referente aos dados dos senadores
+│   └── response.py #
+├── core
+│   ├── api.py # Classe base para API
+│   ├── containers # Pasta contendo classes abstratas
+│   │   ├── error.py # Classes para informar um Erro de conexao ou de resposta
+│   │   ├── __init__.py
+│   │   ├── person.py # Classe abstrata para pessoa (titular/suplementar)
+│   │   └── response.py # Classes para resposta dos dados
+│   └── __init__.py
+├── __init__.py
+├── parse.py # Classes para manipulação dos dados
+
+```
+
+
 
