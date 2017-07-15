@@ -32,12 +32,12 @@ class GetAllParlamentaresRS(SuccessContainerResponse):
 
     @property
     def version(self):
-        return self.version
+        return self._version
 
     @version.setter
     def version(self, value):
 
-        self._versionr = value
+        self._version = value
 
     @property
     def version_service(self):
