@@ -20,6 +20,9 @@ Para executar o teste é necessário ter instalado os pacotes de desenvolvimento
 
 Em seguida execute `pytest`
 
+Para visualizar os resultados pode-se colocar um breakpoint `pytest.set_trace()` no arquivo `tests/senado/test_api.py` linha 30 e percorrer a instancia do objeto `res`  conforme a sua especificação da classe
+`GetAllParlamentaresRS` e de seus dados `Parlamentar`
+
 
 ## Arquitetura do pacote
 

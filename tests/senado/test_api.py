@@ -27,4 +27,6 @@ class SenadoTestCase(SenadoTestCaseBase):
 
         res = self.api.lista_deputados_em_exercicio()
 
+        # pytest.set_trace()
+
         self.assertIsInstance(res, GetAllParlamentaresRS)
