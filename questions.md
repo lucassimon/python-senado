@@ -4,13 +4,13 @@ Resposta das questões solicitadas
 
 ## Parlamentares
 
-Todas as classes referente aos Parlamentares pode ser vista dentro do [ dirétorio](./senado/containers/).
+Todas as classes referente aos Parlamentares pode ser vista dentro do [ dirétorio](./senado/containers/). Em específico o arquivo [parlamentar.py](./senado/containers/parlamentar.py)
 
 ## O desenvolvimento
 
 O desenvolvimento da API foi feito baseado em um pacote python que poderá ser instalado via `pip install`. Foi feito desta maneira para ser reutilizável a qualquer programa que trabalhe com a linguagem;
 
-Sendo assim para visualizar o pacote e testa-lo acess-se a [documentação](./README.md)
+Sendo assim para visualizar o pacote e testa-lo acesse a [documentação](./README.md). Principalmente a seção `teste` pois o pacote não foi submetido ao repositório `PIP`
 
 ## Modelagem
 
